@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
-import { UploadIconProps } from "../../utills/types";
-const UploadIcon = ({ height, width }: UploadIconProps) => (
+import { IconProps } from "../../utills/types";
+const UploadIcon = ({ height, width }: IconProps) => (
     <Svg
         fill="#000000"
         width={height}

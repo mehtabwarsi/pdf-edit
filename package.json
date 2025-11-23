@@ -13,6 +13,7 @@
     "@react-native-documents/picker": "^11.0.0",
     "@react-native-documents/viewer": "^2.0.2",
     "@react-native/new-app-screen": "0.82.1",
+    "@react-navigation/drawer": "^7.7.4",
     "@react-navigation/elements": "^2.8.2",
     "@react-navigation/native": "^7.1.20",
     "@react-navigation/native-stack": "^7.6.3",
@@ -20,10 +21,13 @@
     "react-native": "0.82.1",
     "react-native-blob-util": "^0.23.2",
     "react-native-fs": "^2.20.0",
+    "react-native-gesture-handler": "^2.29.1",
     "react-native-pdf": "^7.0.3",
+    "react-native-reanimated": "^4.1.5",
     "react-native-safe-area-context": "^5.6.2",
     "react-native-screens": "^4.18.0",
-    "react-native-svg": "^15.15.0"
+    "react-native-svg": "^15.15.0",
+    "react-native-worklets": "^0.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

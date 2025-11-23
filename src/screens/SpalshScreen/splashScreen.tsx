@@ -4,6 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../navigation/types';
+import { COLORS } from '../../constants/constants';
+import { FontFamily } from '../../constants/fontFamily';
 
 
 
@@ -12,8 +14,8 @@ const SpalshScreen = () => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
     useEffect(() => {
         const t = setTimeout(() => {
-            navigation.navigate('HomeScreen')
-            
+            navigation.navigate('Drawer')
+
         }, 5000)
         return () => clearTimeout(t)
     }, [navigation])
@@ -43,11 +45,11 @@ export default SpalshScreen;
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: 'darksalmon',
+        backgroundColor: COLORS.white,
     },
     container: {
         flex: 1,
-        backgroundColor: 'darksalmon',
+        backgroundColor: COLORS.white,
         justifyContent: 'space-between',
         paddingVertical: 20,
     },
@@ -61,6 +63,7 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 60,
         fontWeight: 'bold',
+        fontFamily: FontFamily.Bold
     },
     bottomContainer: {
         justifyContent: 'flex-end',
@@ -69,6 +72,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         textTransform: 'uppercase',
         letterSpacing: 2,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: FontFamily.Bold
     },
 });

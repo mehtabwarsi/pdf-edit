@@ -8,10 +8,16 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../navigation/types';
 import RNFS from 'react-native-fs';
-import { StatusBar } from 'react-native/types_generated/index';
+import { FontFamily } from '../../constants/fontFamily';
+import Header from '../../components/Header/Header';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { NavProps } from '../../utills/types';
+
+
 
 const HomeScreen = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
+  const navigation = useNavigation<NavProps>();
 
   // Copy content:// file to app cache (Android 10+)
   const copyContentUriToCache = async (uri: string) => {
@@ -48,14 +54,19 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-      <View style={styles.container}>
-        <Text style={styles.textStyle}>.pdf editor</Text>
+      <View style={{ flex: 1, margin: 16 }}>
+        <Header onClick={() => navigation.openDrawer()} />
+        <View style={styles.container}>
+          <Text style={styles.textStyle}>.pdf editor</Text>
 
-        <TouchableOpacity onPress={handlePdfPicker} activeOpacity={0.8} style={styles.pdfbutton}>
-          <UploadIcon height={24} width={24} />
-          <Text style={styles.pdfButtonText}>Upload a PDF</Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={handlePdfPicker} activeOpacity={0.8} style={styles.pdfbutton}>
+            <UploadIcon height={24} width={24} />
+            <Text style={styles.pdfButtonText}>Upload a PDF</Text>
+          </TouchableOpacity>
+        </View>
+
       </View>
+
     </SafeAreaView>
   );
 };
@@ -74,6 +85,7 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontWeight: 'bold',
     fontSize: 40,
+    fontFamily: FontFamily.Regular
   },
   pdfbutton: {
     marginTop: 10,
@@ -92,5 +104,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     textAlign: 'center',
+    fontFamily: FontFamily.SemiBold
   },
 });
