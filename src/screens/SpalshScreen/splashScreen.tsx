@@ -14,7 +14,7 @@ const SpalshScreen = () => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
     useEffect(() => {
         const t = setTimeout(() => {
-            navigation.navigate('Drawer')
+            navigation.replace('Drawer')
 
         }, 5000)
         return () => clearTimeout(t)
@@ -27,7 +27,7 @@ const SpalshScreen = () => {
 
                 {/* Center Content */}
                 <View style={styles.centerContent}>
-                    <Text style={styles.logoText}>.pdf</Text>
+                    <Text style={styles.logoText}>.pdf editor</Text>
                 </View>
 
                 {/* Bottom Tagline */}

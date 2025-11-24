@@ -133,7 +133,7 @@ export default function CustomBottomSheet({
 								styles.contentContainer,
 								{
 									paddingHorizontal: sheetPadding,
-									maxHeight: sheetHeight - 40, // Adjusted for the drag area
+									maxHeight: sheetHeight - 40, 
 								},
 							]}>
 
