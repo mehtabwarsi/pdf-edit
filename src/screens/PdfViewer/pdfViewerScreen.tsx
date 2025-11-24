@@ -64,6 +64,7 @@ const PdfViewerScreen = () => {
             console.log('PDF load error:', error);
             Alert.alert(
               "PDF Error",
+              // @ts-ignore
               error?.message || "Unable to load this PDF file.",
               [{ text: "OK", onPress: () => navigation.goBack() }]
             );

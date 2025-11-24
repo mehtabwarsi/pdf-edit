@@ -7,6 +7,7 @@ import { RootStackParamList } from "./types";
 import SpalshScreen from "../screens/SpalshScreen/splashScreen";
 import PdfViewerScreen from "../screens/PdfViewer/pdfViewerScreen";
 import DrawerNavigator from "./drawerNavigation";
+import HTMLEditorScreen from "../screens/HtmlViewer/htmlEditorScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -24,6 +25,7 @@ const RootNavigator = () => {
 
             {/* 3️⃣ PDF Viewer stays on stack */}
             <Stack.Screen name="PDFViewerScreen" component={PdfViewerScreen} />
+            <Stack.Screen name="HTMLEditorScreen" component={HTMLEditorScreen} />
         </Stack.Navigator>
     );
 };

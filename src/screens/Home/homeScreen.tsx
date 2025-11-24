@@ -5,12 +5,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { pick } from '@react-native-documents/picker';
 import UploadIcon from '../../assets/svgIcon/upload';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../navigation/types';
 import RNFS from 'react-native-fs';
 import { FontFamily } from '../../constants/fontFamily';
 import Header from '../../components/Header/Header';
-import { DrawerNavigationProp } from '@react-navigation/drawer';
 import { NavProps } from '../../utills/types';
 
 
@@ -32,7 +29,7 @@ const HomeScreen = () => {
   const handlePdfPicker = async () => {
     try {
       const files = await pick({
-        type: ['application/pdf'],
+        type: ['application/pdf','text/html'],
         allowMultiSelection: false,
       });
 
@@ -40,7 +37,7 @@ const HomeScreen = () => {
         const file = files[0];
         if (file) {
           const finalUri = await copyContentUriToCache(file.uri); // fix for Android
-          navigation.navigate('PDFViewerScreen', { fileUri: finalUri });
+          navigation.navigate('HTMLEditorScreen', { fileUri: finalUri });
         }
       }
     } catch (error: any) {
